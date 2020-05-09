@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const router = require('./bin/router/router');
 const path = require('path')
 const childProcess = require('child_process')
-
+const PORT = process.env.PORT || 80;
 const server = express()
 
 // parse application/x-www-form-urlencoded
@@ -20,7 +20,7 @@ server.use('/', express.static(path.join(__dirname, 'dist'), {
   index: 'index.html'
 }))
 
-server.listen(80, () => {
+server.listen(PORT, () => {
   console.log('服务器启动成功 http://localhost:80')
   childProcess.exec(`start http://localhost:80`)
 })
