@@ -20,7 +20,7 @@ server.use('/', express.static(path.join(__dirname, 'dist'), {
   index: 'index.html'
 }))
 
-server.listen(3000, () => {
-  console.log('服务器启动成功 http://localhost:3000')
-  childProcess.exec(`start http://localhost:3000`)
+server.listen(80, () => {
+  console.log('服务器启动成功 http://localhost:80')
+  childProcess.exec(`start http://localhost:80`)
 })
